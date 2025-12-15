@@ -1,0 +1,169 @@
+\documentclass[a4paper]{article}
+
+
+\usepackage{graphicx}
+\usepackage{Rd, parskip, amsmath, enumerate}
+\usepackage[round]{natbib}
+\usepackage{hyperref}
+\usepackage{color}
+
+
+\title{Multiple Imputation in the Presence of High-dimensional data}
+\author{Yi Deng\\
+Yize Zhao\\
+Qi Long}
+
+\usepackage{Sweave}
+\begin{document}
+\input{MIHD-concordance}
+
+
+\maketitle
+\section{Introduction}
+Missing data are often encountered in medical and epidemiological research and present challenges for data analysis. There are numerous reasons for missing data; it could be due to the declination of a subject or to errors made during data collection. It is well known that inadequate handling of missing data may lead to biased estimation and inference.
+A number of statistical methods have been developed for handling missing data. Largely due to it ease of use, multiple imputation (MI) has been arguably the most popular method for handling missing data in practice.  The basic idea underlying MI is to replace each missing data point with  a set of values drawn from its predictive distribution given observed data and generate multiply imputed datasets to account for uncertainty of imputation. Each imputed data set is then analyzed separately using standard complete-data analysis methods and the results are combined across all imputed data sets using Rubin's rule. 
+
+While methods and applications of MI are well implemented in some existing softwares and R packages, no package has been focused on MI in the presence of high-dimensional data.  In real world, we might encounter data with dimensions ranging from a few dozen to several thousand. For instance, DNA microarrays measure the expression levels of large numbers of genes simultaneously, which lead to the fact that the number of variables p is much larger than the number of observations. Existing methods and their software packages of MI cannot handle the 'p larger than n' issue and were shown to have poor performance for other high-dimensional data in numerical studies. 
+
+Zhao and Long (2013) developed three approaches for multiple imputations in the presence of high-dimensional data of univariate missing patterns. In their paper, regularized regressions are applied in order to fit a penalized imputation model. We implement and include their algorithms in this package. In addition, we extend their methods to be applicable for general missing data patterns based on the idea of multiple imputation by chained equations (MICE). 
+
+In this document, we will give a short tutorial on using the functions in the package to conduct imputations for incomplete data sets with univariate or general missing patterns. In Section \ref{Uni}, we illustrate three datasets that have univariate missing patterns with one single partially observed variable following gaussian, binary, and poisson distributions respectively. We give examples of using our functions to conduct multiple imputation for different types of data set. In Section \ref{Gene}, synthetic data set is presented and is used to illustrate multiple imputation for general missing data patterns in the presence of high-dimensional data. All functions offer three regularized regression to choose: lasso, elastic net, adaptive lasso. Also, bayesian lasso is implemented in the case of univariate missing patterns.
+
+\section{Univariate missing pattern} \label{Uni}
+The section presents three examples incorporating three types of data sets that have univariate missing patterns. After installing the \R{} package \pkg{MIHD} as well as its dependency packages, load the pacage.
+\begin{Schunk}
+\begin{Sinput}
+> library('MIHD')
+\end{Sinput}
+\end{Schunk}
+This document uses the features of \pkg{MIHD} 3.0, which contains three data sets for univariate missing patterns. Missing values are represented as \code{NA}. We first load these three data sets so that they can be used for imputations.
+\begin{Schunk}
+\begin{Sinput}
+> data(datagaussian)
+> data(databinary)
+> data(datapoisson)
+\end{Sinput}
+\end{Schunk}
+Take the data frame \code{datagaussian} for instance. Missing values appear only in the first column, which corresponds to a partially observed variable following gaussian distribution. \code{datagaussian} has 100 subjects and 1001 variables, thus can be viewed as a high-dimensional data.
+\begin{Schunk}
+\begin{Sinput}
+> sum(is.na(datagaussian))
+\end{Sinput}
+\begin{Soutput}
+[1] 35
+\end{Soutput}
+\begin{Sinput}
+> sum(is.na(datagaussian))/dim(datagaussian)[1]
+\end{Sinput}
+\begin{Soutput}
+[1] 0.35
+\end{Soutput}
+\end{Schunk}
+Among 100 subjects, 35 (35\%) of them are missing their first column values. With the help of \code{MIdurr} and \code{MIiurr} functions in this packages, we could impute these missing values.
+
+Creating imputations ca be done with a call to \code{MIdurr()} as follows"
+\begin{Schunk}
+\begin{Sinput}
+> imp=MIdurr(data=datagaussian,method="lasso",family="gaussian",m=5)
+\end{Sinput}
+\end{Schunk}
+where the multiply imputed data set is stored in the object \code{imp}. Inspect what the result looks like
+\begin{Schunk}
+\begin{Sinput}
+> imp$n.missing
+\end{Sinput}
+\begin{Soutput}
+[1] 35
+\end{Soutput}
+\begin{Sinput}
+> imp$col.missing
+\end{Sinput}
+\begin{Soutput}
+[1] 1
+\end{Soutput}
+\begin{Sinput}
+> head(imp$impute)
+\end{Sinput}
+\begin{Soutput}
+            [,1]        [,2]        [,3]         [,4]        [,5]
+[1,]  -6.1929729  -6.1929729  -6.1929729  -6.19297292  -6.1929729
+[2,]  -1.1581383  -1.1581383  -1.1581383  -1.15813835  -1.1581383
+[3,] -10.9410326  -4.6194293   4.6867317   0.01170628  -5.0618298
+[4,]   0.5795488   0.5795488   0.5795488   0.57954880   0.5795488
+[5,]  16.1040824  16.1040824  16.1040824  16.10408241  16.1040824
+[6,] -19.3543021 -19.3543021 -19.3543021 -19.35430208 -19.3543021
+\end{Soutput}
+\end{Schunk}
+
+
+\section{General missing pattern} \label{Gene}
+
+
+
+
+
+%' 
+%' \section{Example}
+%' 
+%' In this package, three datasets ("\emph{datagaussian}","\emph{databinary}","\emph{datapoisson}") are included. We first load our datasets. 
+%' <<>>=
+%' library(MIHD)
+%' data(datagaussian)
+%' data(databinary)
+%' data(datapoisson)
+%' @
+%' 
+%' \subsection{Gaussian data}
+%'     First, let's take a look at dataset named datagaussian, whose type of missing values is Gaussian.
+%' <<echo=TRUE,eval=TRUE>>=
+%' dim(datagaussian)
+%' datagaussian[1:20,1:6]
+%' @
+%' 
+%' Each column represents a variable and each row stands for a subject. And \emph{datagaussian} has 100 subjects and 1001 variables, thus can be viewed as a high-dimensional data.
+%' <<echo=TRUE,eval=TRUE>>=
+%' sum(is.na(datagaussian))
+%' sum(is.na(datagaussian))/dim(datagaussian)[1]
+%' @
+%' Among 100 subjects, 35 (35\%) of them are missing their first column values. With the help of two functions in this packages, we could impute these missing values.
+%' 
+%' First, we can use the method through direct use of regularized regression (DURR), i.e. \emph{MIdurr}.
+%' 
+%' In this function, option {\tt method="lasso"} is used to specify the certain regularized regression. In this case, we use lasso penalty. Other options are  elastic net, adaptive lasso and Bayesian lasso. Since the variable that has missingness is Gaussian outcome, we choose {\tt family="gaussian"}. Here, {\tt m=5} means we want to get 5 imputations.
+%' 
+%' <<echo=TRUE,eval=TRUE>>=
+%' MIdurr(data=datagaussian,method="lasso",family="gaussian",m=5)
+%' @
+%' In the output, {\tt n.missing} means the number of missing values in the data. Which corresponds to what we get before.
+%' {\tt col.missing} gives the value of which column contains the missing values. The results shows that the first column has missing values. {\tt impute} gives us imputations matrix with column number equals to m. Note, each column is a imputation.\\
+%' 
+%' We could also use \emph{Bayesian Lasso} as the regularized regression to do the multiple imputation.
+%' The following is the corresponding example, which generate {\tt m=3} imputations.
+%' <<echo=TRUE,eval=TRUE>>=
+%' MIdurr(data=datagaussian,method="blasso",family="gaussian",m=3)
+%' @
+%' 
+%' Also, as we mentioned before, an alternative way to conduct the multiple imputation is through indirect use of regularized regression(IURR). 
+%' <<echo=TRUE,eval=FALSE>>=
+%' MIiurr(data=datagaussian,method="lasso",family="gaussian")
+%' MIiurr(data=datagaussian,method="adaptive lasso",family="gaussian")
+%' MIiurr(data=datagaussian,method="blasso",family="gaussian")
+%' @
+%' 
+%' 
+%' \subsection{Binary data}
+%' Previous examples are for Gaussian data and next we will focus on the case that it is binary variable that has missing values. We ignore the examples for poisson data, since it is very similar to operation of binary data.
+%' <<echo=TRUE,eval=TRUE>>=
+%' dim(databinary)
+%' databinary[1:20,1:6]
+%' @
+%' Similar to \emph{datagaussian}, only first column of this dataset has missing values. 
+%' <<echo=TRUE,eval=TRUE>>=
+%' MIdurr(data=databinary,method="lasso",family="binary",m=10)
+%' @
+
+\section{References}
+
+Zhao, Y., and Long, Q. (2013). Multiple imputation in the presence of high-dimensional data. Statistical Methods in Medical Research, in press.
+
+\end{document}
