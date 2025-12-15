@@ -1,3 +1,4 @@
+%\VignetteIndexEntry{Multiple Imputation in the Presence of High-dimensional Data}
 \documentclass[a4paper]{article}
 
 
@@ -111,7 +112,10 @@ print(pool(fit))
 @
 More detailed output can be obtained with \code{summary()}, i.e.,
 <<echo=TRUE,eval=TRUE>>=
-round(summary(pool(fit)),3)
+res <- summary(pool(fit))
+numeric_cols <- sapply(res, is.numeric)
+res[ , numeric_cols] <- round(res[ , numeric_cols], 3)
+res
 @
 
 
