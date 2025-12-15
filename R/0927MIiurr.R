@@ -193,7 +193,8 @@ MIiurr=function(data,family=c("gaussian"),method=c("lasso"),m=5)
         model<- glmnet(obs1,res1,family="binomial",standardize=FALSE,alpha=0.5)
         cvres<-cv.glmnet(obs1,res1,family="binomial",standardize=FALSE,alpha=0.5)
         fits<-coef(model, s=cvres$lambda.min)
-        nonz<-which(fits!=0)
+        fits_vec <- as.numeric(fits)         # This flattens fits to a numeric vector
+        nonz <- which(fits_vec != 0)
       }
       nonzero<-nonz[-1]-1
       #if(length(nonzero)>length(res1)-10){next}
@@ -209,19 +210,28 @@ MIiurr=function(data,family=c("gaussian"),method=c("lasso"),m=5)
     if(method=="adaptive lasso"){
       nonz=1
       while(length(nonz)==1){
-        model<- glmnet(obs1,res1,family="binomial",standardize=FALSE,alpha=0)
-        betals=coef(model)
-        cvres<-cv.glmnet(obs1,res1,family="binomial",standardize=FALSE,alpha=1,penalty.factor=1/abs(betals),)
+        model <- glmnet(obs1, res1, family="binomial", standardize=FALSE, alpha=0)
+        betals <- coef(model)
+        betals_vec <- as.numeric(betals)
+        penalty.factor <- 1 / abs(betals_vec[-1])
+        penalty.factor[!is.finite(penalty.factor)] <- 1
+        
+        if(length(penalty.factor) != ncol(obs1)) {
+          warning("Forcing penalty.factor to match ncol(obs1)")
+          penalty.factor <- penalty.factor[seq_len(ncol(obs1))]
+        }
+        cvres <- cv.glmnet(obs1, res1, family="binomial", standardize=FALSE, alpha=1, penalty.factor=penalty.factor)
         fits<-coef(model, s=cvres$lambda.min)
-        nonz<-which(fits!=0)
+        fits_vec <- as.numeric(fits)         # This flattens fits to a numeric vector
+        nonz <- which(fits_vec != 0)
       }
       nonzero<-nonz[-1]-1
       #if(length(nonzero)>length(res1)-10){next}
-      try(newreg<-glm(res1~obs1[,nonzero],family="binomial"),silent=TRUE)
-      newcoff<-newreg$coefficients
-      newcoff<-na.omit(newcoff)
-      newcov<-vcov(newreg)
-      nonzero<-as.data.frame(nonzero)
+      try(newreg <- glm(res1 ~ obs1[, nonzero], family="binomial"), silent=TRUE)
+      idx <- which(!is.na(newreg$coefficients))
+      newcoff <- newreg$coefficients[idx]
+      newcov <- vcov(newreg)[idx, idx, drop=FALSE]
+      nonzero <- as.data.frame(nonzero)
     }        
     
     ##inpute missing values
@@ -284,7 +294,8 @@ MIiurr=function(data,family=c("gaussian"),method=c("lasso"),m=5)
         model<- glmnet(obs1,res1,family="poisson",standardize=FALSE,alpha=0.5)
         cvres<-cv.glmnet(obs1,res1,family="poisson",standardize=FALSE,alpha=0.5)
         fits<-coef(model, s=cvres$lambda.min)
-        nonz<-which(fits!=0)
+        fits_vec <- as.numeric(fits)         # This flattens fits to a numeric vector
+        nonz <- which(fits_vec != 0)
       }
       nonzero<-nonz[-1]-1
       #if(length(nonzero)>length(res1)-10){next}
@@ -302,16 +313,26 @@ MIiurr=function(data,family=c("gaussian"),method=c("lasso"),m=5)
       while(length(nonz)==1){
         model<- glmnet(obs1,res1,family="poisson",standardize=FALSE,alpha=0)
         betals=coef(model)
-        cvres<-cv.glmnet(obs1,res1,family="poisson",standardize=FALSE,alpha=1,penalty.factor=1/abs(betals),)
+        betals_vec <- as.numeric(betals)
+        penalty.factor <- 1 / abs(betals_vec[-1])
+        penalty.factor[!is.finite(penalty.factor)] <- 1
+        
+        if(length(penalty.factor) != ncol(obs1)) {
+          warning("Forcing penalty.factor to match ncol(obs1)")
+          penalty.factor <- penalty.factor[seq_len(ncol(obs1))]
+        }
+        cvres<-cv.glmnet(obs1,res1,family="poisson",standardize=FALSE,alpha=1,penalty.factor=penalty.factor,)
         fits<-coef(model, s=cvres$lambda.min)
-        nonz<-which(fits!=0)
+        fits_vec <- as.numeric(fits)         # This flattens fits to a numeric vector
+        nonz <- which(fits_vec != 0)
       }
       nonzero<-nonz[-1]-1
       #if(length(nonzero)>length(res1)-10){next}
       try(newreg<-glm(res1~obs1[,nonzero],family="poisson"),silent=TRUE)
-      newcoff<-newreg$coefficients
-      newcoff<-na.omit(newcoff)
-      newcov<-vcov(newreg)
+      # Subset to non-NA coefficients
+      idx <- which(!is.na(newreg$coefficients))
+      newcoff <- newreg$coefficients[idx]
+      newcov <- vcov(newreg)[idx, idx, drop = FALSE]
       nonzero<-as.data.frame(nonzero)
     }        
     

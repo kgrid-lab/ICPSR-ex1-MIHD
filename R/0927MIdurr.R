@@ -145,7 +145,16 @@ if(family=="binary"){
     #model<-adalasso(obs,res)
     
     betals=coef(cv.glmnet(obs,res,family="binomial",alpha=0))
-    cvob1=cv.glmnet(obs,res,alpha=1,penalty.factor=1/abs(betals),family="binomial")
+    
+    # betals as numeric vector
+    betals_vec <- as.numeric(betals)
+    
+    # Skip the intercept (usually the first element)
+    penalty.factor <- 1 / abs(betals_vec[-1])   # now length == ncol(obs1)
+    
+    # Replace any non-finite values (Inf, NaN) with 1 for safety
+    penalty.factor[!is.finite(penalty.factor)] <- 1
+    cvob1=cv.glmnet(obs,res,alpha=1,penalty.factor=penalty.factor,family="binomial")
     pred<-predict(cvob1,newobs,s="lambda.min")
   }
   ##inpute missing values
@@ -191,7 +200,15 @@ if(family=="poisson"){
     #model<-adalasso(obs,res)
     
     betals=coef(cv.glmnet(obs,res,family="poisson",alpha=0))
-    cvob1=cv.glmnet(obs,res,alpha=1,penalty.factor=1/abs(betals),family="poisson")
+    # betals as numeric vector
+    betals_vec <- as.numeric(betals)
+    
+    # Skip the intercept (usually the first element)
+    penalty.factor <- 1 / abs(betals_vec[-1])   # now length == ncol(obs1)
+    
+    # Replace any non-finite values (Inf, NaN) with 1 for safety
+    penalty.factor[!is.finite(penalty.factor)] <- 1
+    cvob1=cv.glmnet(obs,res,alpha=1,penalty.factor=penalty.factor,family="poisson")
     pred<-predict(cvob1,newobs,s="lambda.min")
   }
   ##inpute missing values
