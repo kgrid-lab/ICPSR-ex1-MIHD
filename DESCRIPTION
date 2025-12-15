@@ -3,7 +3,10 @@ Type: Package
 Title: Multiple Imputation in the Presence of High-dimensinal Data
 Version: 3.0
 Date: 2015-09-22
-Author: Yi Deng and Qi Long
+Authors@R: c(
+      person(given = "Yi", family = "Deng", email = "ydeng26@emory.edu", role = c("aut","cre")), 
+      person(given = "Qi", family = "Long", role = c("aut"))
+    )
 Maintainer: Yi Deng <ydeng26@emory.edu>
 Depends: MASS, glmnet, mice, blasso
 Description: Multiple imputation through direct use of regularized regression
@@ -14,3 +17,6 @@ Description: Multiple imputation through direct use of regularized regression
 License: GPL-2|GPL-3
 NeedsCompilation: no
 Packaged: 2015-09-23 03:10:44 UTC; Yi
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
