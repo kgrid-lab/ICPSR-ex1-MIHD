@@ -16,7 +16,7 @@
   },
   "koio:hasKnowledge": [
     {
-      "@id": "Direct Use of Regularized Regression for General Missing Patterns",
+      "@id": "GMdurr.R",
       "dc:title": "Direct Use of Regularized Regression for General Missing Patterns",
       "dc:identifier": "1",
       "dc:version": "3.0",
@@ -29,22 +29,9 @@
       }
     },
     {
-      "@id": "as.mice_Conversion Multivariate Imputation by Chained Equations",
-      "dc:title": "as.mice_Conversion Multivariate Imputation by Chained Equations",
-      "dc:identifier": "2",
-      "dc:version": "3.0",
-      "dc:date": "2015-09-22",
-      "dc:description": "Converts an multiply imputed dataset obtained from DURR and IURR functions into a mids object",
-      "@type": "koio:Knowledge",
-      "implementedBy": {
-        "@id": "R/asmice.R",
-        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
-      }
-    },
-    {
-      "@id": "Indirect Use of Regularized Regression for General Missing Patterns",
+      "@id": "GMiurr.R",
       "dc:title": "Indirect Use of Regularized Regression for General Missing Patterns",
-      "dc:identifier": "3",
+      "dc:identifier": "2",
       "dc:version": "3.0",
       "dc:date": "2015-09-22",
       "dc:description": "Multiple Imputation through Indirect Use of Regularized Regression (IURR) in the presence of General missing pattern",
@@ -55,9 +42,9 @@
       }
     },
     {
-      "@id": "Multiple Imputation Indirect Use of Regularized Regression for Univariate Missing Patterns",
+      "@id": "0927MIiurr.R",
       "dc:title": "Multiple Imputation Indirect Use of Regularized Regression for Univariate Missing Patterns",
-      "dc:identifier": "4",
+      "dc:identifier": "3",
       "dc:version": "3.0",
       "dc:date": "2015-09-27",
       "dc:description": "Multiple Imputation through Indirect Use of Regularized Regression (IURR) for univariate missing data pattern",
@@ -68,7 +55,7 @@
       }
     },
     {
-      "@id": "Multiple Imputation Direct Use of Regularized Regression for Univariate Missing Patterns",
+      "@id": "0927MIdurr.R",
       "dc:title": "Multiple Imputation Direct Use of Regularized Regression for Univariate Missing Patterns",
       "dc:identifier": "4",
       "dc:version": "3.0",
