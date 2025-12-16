@@ -1,13 +1,13 @@
 {
   "@context": "https://kgrid.org/koio/2.1/context.jsonld",
-  "@id": "UUID",
+  "@id": "placeholder#UUID",
   "versionInfo": "2.1",
   "@type": "KnowledgeObject",
   "dc:title": "Multiple Imputation in the Presence of High-dimensional Data",
-  "dc:identifier": "ARK ID",
+  "dc:identifier": "placeholder#ARK ID",
   "dc:version": "3.0",
   "dc:date": "2015-09-22",
-  "dc:description": "R package for multiple imputation for high-dimensional incomplete data",
+  "dc:description": "Computable Knowledge for multiple imputation for high-dimensional incomplete data",
   "schema:creator": {
     "@id": "Long Research Group",
     "@type": "schema:Organization",
@@ -16,7 +16,7 @@
   },
   "koio:hasKnowledge": [
     {
-      "@id": "GMdurr.R",
+      "@id": "GMdurr",
       "dc:title": "Direct Use of Regularized Regression for General Missing Patterns",
       "dc:identifier": "1",
       "dc:version": "3.0",
@@ -25,11 +25,15 @@
       "@type": "koio:Knowledge",
       "implementedBy": {
         "@id": "R/GMdurr.R",
-        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"],
+        "????:packagedIn" : {
+              "@id":"placeholder#https://cran.r-project.org/web/packages/mihd/index.html",
+              "@type":["R package"]
+             }
       }
     },
     {
-      "@id": "GMiurr.R",
+      "@id": "GMiurr",
       "dc:title": "Indirect Use of Regularized Regression for General Missing Patterns",
       "dc:identifier": "2",
       "dc:version": "3.0",
@@ -39,10 +43,14 @@
       "implementedBy": {
         "@id": "R/GMiurr.R",
         "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+        "????:packagedIn" : {
+        "@id":"placeholder#https://cran.r-project.org/web/packages/mihd/index.html",
+        "@type":["R package"]
+        }
       }
     },
     {
-      "@id": "0927MIiurr.R",
+      "@id": "0927MIiurr",
       "dc:title": "Multiple Imputation Indirect Use of Regularized Regression for Univariate Missing Patterns",
       "dc:identifier": "3",
       "dc:version": "3.0",
@@ -52,10 +60,14 @@
       "implementedBy": {
         "@id": "R/0927MIiurr.R",
         "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+        "????:packagedIn" : {
+        "@id":"placeholder#https://cran.r-project.org/web/packages/mihd/index.html",
+        "@type":["R package"]
+        }
       }
     },
     {
-      "@id": "0927MIdurr.R",
+      "@id": "0927MIdurr",
       "dc:title": "Multiple Imputation Direct Use of Regularized Regression for Univariate Missing Patterns",
       "dc:identifier": "4",
       "dc:version": "3.0",
@@ -65,6 +77,10 @@
       "implementedBy": {
         "@id": "R/0927MIdurr.R",
         "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+        "????:packagedIn" : {
+        "@id":"placeholder#https://cran.r-project.org/web/packages/mihd/index.html",
+        "@type":["R package"]
+        }
       }
     }
   ]
