@@ -1,0 +1,84 @@
+{
+  "@context": "https://kgrid.org/koio/2.1/context.jsonld",
+  "@id": "UUID",
+  "versionInfo": "2.1",
+  "@type": "KnowledgeObject",
+  "dc:title": "Multiple Imputation in the Presence of High-dimensional Data",
+  "dc:identifier": "ARK ID",
+  "dc:version": "3.0",
+  "dc:date": "2015-09-22",
+  "dc:description": "R package for multiple imputation for high-dimensional incomplete data",
+  "schema:creator": {
+    "@id": "Long Research Group",
+    "@type": "schema:Organization",
+    "schema:Name": "Long Research Group",
+    "schema:affiliation": "Perelman School of Medicine, University of Pennsylvania"
+  },
+  "koio:hasKnowledge": [
+    {
+      "@id": "Direct Use of Regularized Regression for General Missing Patterns",
+      "dc:title": "Direct Use of Regularized Regression for General Missing Patterns",
+      "dc:identifier": "1",
+      "dc:version": "3.0",
+      "dc:date": "2015-09-22",
+      "dc:description": "Multiple Imputation through Direct Use of Regularized Regression (DURR) in the presence of General missing patterns",
+      "@type": "koio:Knowledge",
+      "implementedBy": {
+        "@id": "R/GMdurr.R",
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+      }
+    },
+    {
+      "@id": "as.mice_Conversion Multivariate Imputation by Chained Equations",
+      "dc:title": "as.mice_Conversion Multivariate Imputation by Chained Equations",
+      "dc:identifier": "2",
+      "dc:version": "3.0",
+      "dc:date": "2015-09-22",
+      "dc:description": "Converts an multiply imputed dataset obtained from DURR and IURR functions into a mids object",
+      "@type": "koio:Knowledge",
+      "implementedBy": {
+        "@id": "R/asmice.R",
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+      }
+    },
+    {
+      "@id": "Indirect Use of Regularized Regression for General Missing Patterns",
+      "dc:title": "Indirect Use of Regularized Regression for General Missing Patterns",
+      "dc:identifier": "3",
+      "dc:version": "3.0",
+      "dc:date": "2015-09-22",
+      "dc:description": "Multiple Imputation through Indirect Use of Regularized Regression (IURR) in the presence of General missing pattern",
+      "@type": "koio:Knowledge",
+      "implementedBy": {
+        "@id": "R/GMiurr.R",
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+      }
+    },
+    {
+      "@id": "Multiple Imputation Indirect Use of Regularized Regression for Univariate Missing Patterns",
+      "dc:title": "Multiple Imputation Indirect Use of Regularized Regression for Univariate Missing Patterns",
+      "dc:identifier": "4",
+      "dc:version": "3.0",
+      "dc:date": "2015-09-27",
+      "dc:description": "Multiple Imputation through Indirect Use of Regularized Regression (IURR) for univariate missing data pattern",
+      "@type": "koio:Knowledge",
+      "implementedBy": {
+        "@id": "R/0927MIiurr.R",
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+      }
+    },
+    {
+      "@id": "Multiple Imputation Direct Use of Regularized Regression for Univariate Missing Patterns",
+      "dc:title": "Multiple Imputation Direct Use of Regularized Regression for Univariate Missing Patterns",
+      "dc:identifier": "4",
+      "dc:version": "3.0",
+      "dc:date": "2015-09-27",
+      "dc:description": "Multiple Imputation through Direct Use of Regularized Regression (DURR) for univariate missing data pattern",
+      "@type": "koio:Knowledge",
+      "implementedBy": {
+        "@id": "R/0927MIdurr.R",
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
+      }
+    }
+  ]
+}

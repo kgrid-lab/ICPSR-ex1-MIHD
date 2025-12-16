@@ -1,0 +1,550 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Multiple Imputation in the Presence of High-dimensional Data</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            width: 100%;
+        }
+        .left-column {
+            width: 70%;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        /* Right Column */
+        .right-column {
+            width: 30%;
+            background-color: #e9e9e9;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .metadata {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .metadata p {
+            margin: 5px 0;
+        }
+        .doc-section, .test-section {
+            
+            right: 20px;
+            width: 250px;
+            color: black;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+            font-size: 16px;
+        }
+        .doc-section {
+            top: 20px;
+            background-color: #97c8ed;
+        }
+        .doc-section h3 {
+            margin-top: 0;
+        }
+        .doc-section a {
+            text-decoration: underline;
+        }
+        .doc-section p {
+            margin-top: 5px;
+        }
+        
+        .test-section {
+            
+            background-color: #96d6b7;
+        }
+        .test-section h3 {
+            margin-top: 0;
+        }
+        
+        .test-section a {
+            text-decoration: underline;
+        }
+        
+        .test-section p {
+            margin-top: 5px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+        <div class="left-column">
+            <div class="metadata" id="metadata">
+            <h1>Multiple Imputation in the Presence of High-dimensional Data</h1>
+            <p>R package for multiple imputation for high-dimensional incomplete data</p>
+            <p><strong>Id:</strong> <a href="." target='_blank'> 
+                UUID
+            </a></p>
+            <p><strong>Identifier:</strong> ARK ID</p>
+            <p><strong>Type:</strong> <a href="https://kgrid.org/koio#KnowledgeObject" target='_blank'>https://kgrid.org/koio#KnowledgeObject</a></p>
+            <p><strong>Version:</strong> 3.0</p>
+            <p><strong>Date:</strong> 2015-09-22</p>
+            
+            
+            <hr>
+            <h2>Creator</h2>
+            <p><strong>Name:</strong> 
+                 </p>
+            <p><strong>Affiliation:</strong> Perelman School of Medicine, University of Pennsylvania</p>
+            <p><strong>Email:</strong> 
+                <a href="mailto:Undefined" target='_blank'>
+                    Undefined
+                </a>
+            </p>
+            <p><strong>Website:</strong> 
+                <a href="Long Research Group" target='_blank'>
+                    Long Research Group
+                </a>
+            </p>
+
+            
+                <hr>
+                <h2>Knowledge</h2>
+                
+                    
+                    
+                    </p>
+                        <p><h3> Direct Use of Regularized Regression for General Missing Patterns</h3></p>
+                         
+                    
+                    <p><strong>Type:</strong> 
+                            <a href="https://kgrid.org/koio#Knowledge" target='_blank'>
+                                https://kgrid.org/koio#Knowledge
+                            </a>
+                    </p>
+                    
+                        <p><strong>Description:</strong> Multiple Imputation through Direct Use of Regularized Regression (DURR) in the presence of General missing patterns</p>
+                    
+                    
+                    
+                        <p><strong>Date:</strong> 
+                            2015-09-22
+                        </p>
+                    
+                    
+                    
+                                
+                                      
+                    
+                    
+                                       
+                    
+                        
+                        <p><strong>Implemented by:</strong> 
+                        <ul>
+                        
+                            <li>
+                            <a href="R/GMdurr.R" target='_blank'>
+                                GMdurr.R
+                            </a><br/>(type: 
+                                
+                                
+                                  
+                                    
+                                        <a href="Script" target='_blank'>
+                                            Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions" target='_blank'>
+                                            Functions
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="R code" target='_blank'>
+                                            R code
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions Script" target='_blank'>
+                                            Functions Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Function description" target='_blank'>
+                                            Function description
+                                        </a>
+                                      
+                                
+                                
+                                )
+                            </li>
+                        
+                        </ul>
+                        </p>
+                                      
+                                        
+                    
+                    
+                                       
+                
+                    
+                    
+                    </p>
+                        <p><h3> as.mice_Conversion Multivariate Imputation by Chained Equations</h3></p>
+                         
+                    
+                    <p><strong>Type:</strong> 
+                            <a href="https://kgrid.org/koio#Knowledge" target='_blank'>
+                                https://kgrid.org/koio#Knowledge
+                            </a>
+                    </p>
+                    
+                        <p><strong>Description:</strong> Converts an multiply imputed dataset obtained from DURR and IURR functions into a mids object</p>
+                    
+                    
+                    
+                        <p><strong>Date:</strong> 
+                            2015-09-22
+                        </p>
+                    
+                    
+                    
+                                
+                                      
+                    
+                    
+                                       
+                    
+                        
+                        <p><strong>Implemented by:</strong> 
+                        <ul>
+                        
+                            <li>
+                            <a href="R/asmice.R" target='_blank'>
+                                asmice.R
+                            </a><br/>(type: 
+                                
+                                
+                                  
+                                    
+                                        <a href="Script" target='_blank'>
+                                            Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions" target='_blank'>
+                                            Functions
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="R code" target='_blank'>
+                                            R code
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions Script" target='_blank'>
+                                            Functions Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Function description" target='_blank'>
+                                            Function description
+                                        </a>
+                                      
+                                
+                                
+                                )
+                            </li>
+                        
+                        </ul>
+                        </p>
+                                      
+                                        
+                    
+                    
+                                       
+                
+                    
+                    
+                    </p>
+                        <p><h3> Indirect Use of Regularized Regression for General Missing Patterns</h3></p>
+                         
+                    
+                    <p><strong>Type:</strong> 
+                            <a href="https://kgrid.org/koio#Knowledge" target='_blank'>
+                                https://kgrid.org/koio#Knowledge
+                            </a>
+                    </p>
+                    
+                        <p><strong>Description:</strong> Multiple Imputation through Indirect Use of Regularized Regression (IURR) in the presence of General missing pattern</p>
+                    
+                    
+                    
+                        <p><strong>Date:</strong> 
+                            2015-09-22
+                        </p>
+                    
+                    
+                    
+                                
+                                      
+                    
+                    
+                                       
+                    
+                        
+                        <p><strong>Implemented by:</strong> 
+                        <ul>
+                        
+                            <li>
+                            <a href="R/GMiurr.R" target='_blank'>
+                                GMiurr.R
+                            </a><br/>(type: 
+                                
+                                
+                                  
+                                    
+                                        <a href="Script" target='_blank'>
+                                            Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions" target='_blank'>
+                                            Functions
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="R code" target='_blank'>
+                                            R code
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions Script" target='_blank'>
+                                            Functions Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Function description" target='_blank'>
+                                            Function description
+                                        </a>
+                                      
+                                
+                                
+                                )
+                            </li>
+                        
+                        </ul>
+                        </p>
+                                      
+                                        
+                    
+                    
+                                       
+                
+                    
+                    
+                    </p>
+                        <p><h3> Multiple Imputation Indirect Use of Regularized Regression for Univariate Missing Patterns</h3></p>
+                         
+                    
+                    <p><strong>Type:</strong> 
+                            <a href="https://kgrid.org/koio#Knowledge" target='_blank'>
+                                https://kgrid.org/koio#Knowledge
+                            </a>
+                    </p>
+                    
+                        <p><strong>Description:</strong> Multiple Imputation through Indirect Use of Regularized Regression (IURR) for univariate missing data pattern</p>
+                    
+                    
+                    
+                        <p><strong>Date:</strong> 
+                            2015-09-27
+                        </p>
+                    
+                    
+                    
+                                
+                                      
+                    
+                    
+                                       
+                    
+                        
+                        <p><strong>Implemented by:</strong> 
+                        <ul>
+                        
+                            <li>
+                            <a href="R/0927MIiurr.R" target='_blank'>
+                                0927MIiurr.R
+                            </a><br/>(type: 
+                                
+                                
+                                  
+                                    
+                                        <a href="Script" target='_blank'>
+                                            Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions" target='_blank'>
+                                            Functions
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="R code" target='_blank'>
+                                            R code
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions Script" target='_blank'>
+                                            Functions Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Function description" target='_blank'>
+                                            Function description
+                                        </a>
+                                      
+                                
+                                
+                                )
+                            </li>
+                        
+                        </ul>
+                        </p>
+                                      
+                                        
+                    
+                    
+                                       
+                
+                    
+                    
+                    </p>
+                        <p><h3> Multiple Imputation Direct Use of Regularized Regression for Univariate Missing Patterns</h3></p>
+                         
+                    
+                    <p><strong>Type:</strong> 
+                            <a href="https://kgrid.org/koio#Knowledge" target='_blank'>
+                                https://kgrid.org/koio#Knowledge
+                            </a>
+                    </p>
+                    
+                        <p><strong>Description:</strong> Multiple Imputation through Direct Use of Regularized Regression (DURR) for univariate missing data pattern</p>
+                    
+                    
+                    
+                        <p><strong>Date:</strong> 
+                            2015-09-27
+                        </p>
+                    
+                    
+                    
+                                
+                                      
+                    
+                    
+                                       
+                    
+                        
+                        <p><strong>Implemented by:</strong> 
+                        <ul>
+                        
+                            <li>
+                            <a href="R/0927MIdurr.R" target='_blank'>
+                                0927MIdurr.R
+                            </a><br/>(type: 
+                                
+                                
+                                  
+                                    
+                                        <a href="Script" target='_blank'>
+                                            Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions" target='_blank'>
+                                            Functions
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="R code" target='_blank'>
+                                            R code
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Functions Script" target='_blank'>
+                                            Functions Script
+                                        </a>, 
+                                      
+                                  
+                                    
+                                        <a href="Function description" target='_blank'>
+                                            Function description
+                                        </a>
+                                      
+                                
+                                
+                                )
+                            </li>
+                        
+                        </ul>
+                        </p>
+                                      
+                                        
+                    
+                    
+                                       
+                
+            
+
+            
+        </div>            
+        </div>
+        <div class="right-column">
+            <div class="doc-section" id="doc-section">
+            
+                <p>No documentation available</p>
+            
+        </div>
+
+            <div class="test-section" id="test-section">
+            
+                <p>No tests available</p>
+            
+            </div>
+        </div>
+        </div>
+    </body>
+    </html>
+    
