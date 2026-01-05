@@ -26,7 +26,7 @@
       "implementedBy": {
         "@id": "R/GMdurr.R",
         "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"],
-        "????:packagedIn" : {
+        "EX:packagedIn" : {
               "@id":"placeholder#https://cran.r-project.org/web/packages/mihd/index.html",
               "@type":["R package"]
              }
@@ -42,8 +42,8 @@
       "@type": "koio:Knowledge",
       "implementedBy": {
         "@id": "R/GMiurr.R",
-        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
-        "????:packagedIn" : {
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"],
+        "EX:packagedIn" : {
         "@id":"placeholder#https://cran.r-project.org/web/packages/mihd/index.html",
         "@type":["R package"]
         }
@@ -59,8 +59,8 @@
       "@type": "koio:Knowledge",
       "implementedBy": {
         "@id": "R/0927MIiurr.R",
-        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
-        "????:packagedIn" : {
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"],
+        "EX:packagedIn" : {
         "@id":"placeholder#https://cran.r-project.org/web/packages/mihd/index.html",
         "@type":["R package"]
         }
@@ -76,12 +76,82 @@
       "@type": "koio:Knowledge",
       "implementedBy": {
         "@id": "R/0927MIdurr.R",
-        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"]
-        "????:packagedIn" : {
+        "@type": ["Script" , "Functions",  "R code", "Functions Script", "Function description"],
+        "EX:packagedIn" : {
         "@id":"placeholder#https://cran.r-project.org/web/packages/mihd/index.html",
         "@type":["R package"]
         }
       }
     }
+  ],
+  "koio:hasService": [
+    {
+      "@id": "service_for_GMdurr",
+      "@type": [
+        "Service","library"
+      ],
+      "dc:description": "Way of invoking the GMdurr software function",
+      "hasInterface": "R/GMdurr.R",
+      "dependsOn": [
+        "GMdurr"
+      ],
+      "implementedBy": [
+        {
+          "@id": "NAMESPACE",
+          "@type": [
+            "Implementation"
+          ]
+        },
+        {
+      "@id": "service_for_GMiurr",
+      "@type": [
+        "Service","library"
+      ],
+      "dc:description": "Way of invoking the GMiurr software function",
+      "hasInterface": "R/GMiurr.R",
+      "dependsOn": [
+        "GMiurr"
+      ],
+      "implementedBy": [
+        {
+          "@id": "NAMESPACE",
+          "@type": [
+            "Implementation"
+          ]
+        },
+      {
+      "@id": "service_for_0927MIiurr",
+      "@type": [
+        "Service","library"
+      ],
+      "dc:description": "Way of invoking the 0927MIiurr software function",
+      "hasInterface": "R/0927MIiurr.R",
+      "dependsOn": [
+        "0927MIiurr"
+      ],
+      "implementedBy": [
+        {
+          "@id": "NAMESPACE",
+          "@type": [
+            "Implementation"
+          ]
+        }, 
+      {
+      "@id": "service_for_0927MIdurr",
+      "@type": [
+        "Service","library"
+      ],
+      "dc:description": "Way of invoking the 0927MIdurr software function",
+      "hasInterface": "R/0927MIdurr.R",
+      "dependsOn": [
+        "0927MIdurr"
+      ],
+      "implementedBy": [
+        {
+          "@id": "NAMESPACE",
+          "@type": [
+            "Implementation"
+          ]
+      }
   ]
 }
