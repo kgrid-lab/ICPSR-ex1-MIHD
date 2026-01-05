@@ -4,6 +4,6 @@ This repository holds files and documentation about research software for imputa
 
 For more information about this software example, go to:
 
-(ICPSR-PCODR RECORD)[https://www.icpsr.umich.edu/web/pcodr/studies/39526/versions/V1]
-(MIHD software website)[https://www.med.upenn.edu/long-lab/software.html]
+[ICPSR-PCODR RECORD](https://www.icpsr.umich.edu/web/pcodr/studies/39526/versions/V1)
+[MIHD software website]([https://www.med.upenn.edu/long-lab/software.html)
 
