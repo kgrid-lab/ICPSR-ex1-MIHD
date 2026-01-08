@@ -118,24 +118,16 @@
   ],
   "koio:hasService": [
     {
-      "@id": "service_for_GMdurr",
+      "@id": "GMdurr_service",
       "@type": [
         "Service",
         "library"
       ],
-      "dc:description": "Way of invoking the GMdurr software function",
-      "hasInterface": "R/GMdurr.R",
+      "dc:description": "Default invocation for GMdurr",
+      "hasInterface": "man/GMdurr.Rd",
       "dependsOn": [
         "GMdurr"
       ],
-      "implementedBy": [
-        {
-          "@id": "NAMESPACE",
-          "@type": [
-            "Implementation"
-          ]
-        }
-      ]
     },
     {
       "@id": "service_for_GMiurr",
