@@ -7,6 +7,14 @@
   "dc:identifier": "placeholder#ARK ID",
   "dc:version": "3.0",
   "dc:date": "2015-09-22",
+  "dc:source":[
+     "https://www.icpsr.umich.edu/web/pcodr/studies/39526/versions/V1 ",
+     "https://www.med.upenn.edu/long-lab/software.html"
+  ],
+  "dc:isReferencedBy":[
+     "Y. Zhao and Q. Long, “Multiple imputation in the presence of high-dimensional data,” Statistical methods in medical research, p. 962280213511027, 2013.",
+     "Y. Deng, C. Chang, M. S. Ido, and Q. Long, “Multiple imputation for general missing data patterns in the presence of high-dimensional data,” Scientific reports, vol. 6, iss. 21689, 2016."
+  ],
   "dc:description": "Computable Knowledge for multiple imputation for high-dimensional incomplete data",
   "schema:creator": {
     "@id": "Long Research Group",
