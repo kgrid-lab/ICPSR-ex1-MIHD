@@ -198,4 +198,17 @@
       ]
     }
   ]
+"koio:hasDocumentation": [
+    {
+      "@id": "https://github.com/kgrid-lab/ICPSR-ex1-MIHD/blob/main/vignettes/algorithms_general.pdf",
+      "@type": ["InformationArtifact","Vignette"],
+      "dc:title": "Multiple Imputation Algorithms for General Missing Pattern in the Presence of High-dimensional Data",
+      "dc:description": "Treatise on how IURR and DURR algorithms work in general"
+    },
+    {
+      "@id": "https://github.com/kgrid-lab/ICPSR-ex1-MIHD/blob/main/vignettes/algorithms_univariate.pdf",
+      "@type": ["InformationArtifact","Vignette"],
+      "dc:title": "Multiple Imputation Algorithms for Univariate Missing Data in the Presence of High-dimensional Data",
+      "dc:description": "Treatise on how IURR and DURR algorithms when imputing data for only one variable"
+    }
 }
