@@ -7,13 +7,19 @@
   "dc:identifier": "placeholder#ARK ID",
   "dc:version": "3.0",
   "dc:date": "2015-09-22",
-  "dc:source":[
-     "https://www.icpsr.umich.edu/web/pcodr/studies/39526/versions/V1 ",
-     "https://www.med.upenn.edu/long-lab/software.html"
+  "dc:source": [
+    "https://www.icpsr.umich.edu/web/pcodr/studies/39526/versions/V1 ",
+    "https://www.med.upenn.edu/long-lab/software.html"
   ],
-  "dc:isReferencedBy":[
-     "Y. Zhao and Q. Long, “Multiple imputation in the presence of high-dimensional data,” Statistical methods in medical research, p. 962280213511027, 2013.",
-     "Y. Deng, C. Chang, M. S. Ido, and Q. Long, “Multiple imputation for general missing data patterns in the presence of high-dimensional data,” Scientific reports, vol. 6, iss. 21689, 2016."
+  "dc:isReferencedBy": [
+    {
+      "@id": "https://doi.org/10.1177/0962280213511027",
+      "dc:title": "Y. Zhao and Q. Long, “Multiple imputation in the presence of high-dimensional data,” Statistical methods in medical research, p. 962280213511027, 2013."
+    },
+    {
+      "@id": "https://doi.org/10.1038/srep21689",
+      "dc:title": "Y. Deng, C. Chang, M. S. Ido, and Q. Long, “Multiple imputation for general missing data patterns in the presence of high-dimensional data,” Scientific reports, vol. 6, iss. 21689, 2016."
+    }
   ],
   "dc:description": "Computable Knowledge for multiple imputation for high-dimensional incomplete data",
   "schema:creator": {
@@ -135,7 +141,7 @@
       "hasInterface": "man/GMdurr.Rd",
       "dependsOn": [
         "GMdurr"
-      ],
+      ]
     },
     {
       "@id": "service_for_GMiurr",
@@ -197,18 +203,25 @@
         }
       ]
     }
-  ]
-"koio:hasDocumentation": [
+  ],
+  "koio:hasDocumentation": [
     {
       "@id": "https://github.com/kgrid-lab/ICPSR-ex1-MIHD/blob/main/vignettes/algorithms_general.pdf",
-      "@type": ["InformationArtifact","Vignette"],
+      "@type": [
+        "InformationArtifact",
+        "Vignette"
+      ],
       "dc:title": "Multiple Imputation Algorithms for General Missing Pattern in the Presence of High-dimensional Data",
       "dc:description": "Treatise on how IURR and DURR algorithms work in general"
     },
     {
       "@id": "https://github.com/kgrid-lab/ICPSR-ex1-MIHD/blob/main/vignettes/algorithms_univariate.pdf",
-      "@type": ["InformationArtifact","Vignette"],
+      "@type": [
+        "InformationArtifact",
+        "Vignette"
+      ],
       "dc:title": "Multiple Imputation Algorithms for Univariate Missing Data in the Presence of High-dimensional Data",
       "dc:description": "Treatise on how IURR and DURR algorithms when imputing data for only one variable"
     }
+  ]
 }
