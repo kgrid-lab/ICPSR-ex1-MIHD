@@ -7,27 +7,42 @@
   "dc:identifier": "placeholder#ARK ID",
   "dc:version": "3.0",
   "dc:date": "2015-09-22",
+  "schema:funder": "Patient-Centered Outcomes Research Institute (PCORI) ME-1303-5840",
   "dc:source": [
-    "https://www.icpsr.umich.edu/web/pcodr/studies/39526/versions/V1 ",
+    "https://www.icpsr.umich.edu/web/pcodr/studies/39526/versions/V1",
     "https://www.med.upenn.edu/long-lab/software.html"
   ],
   "dc:isReferencedBy": [
     {
       "@id": "https://doi.org/10.1177/0962280213511027",
-      "dc:title": "Y. Zhao and Q. Long, “Multiple imputation in the presence of high-dimensional data,” Statistical methods in medical research, p. 962280213511027, 2013."
+      "dc:bibliographicCitation": "Y. Zhao and Q. Long, “Multiple imputation in the presence of high-dimensional data,” Statistical methods in medical research, p. 962280213511027, 2013."
     },
     {
       "@id": "https://doi.org/10.1038/srep21689",
-      "dc:title": "Y. Deng, C. Chang, M. S. Ido, and Q. Long, “Multiple imputation for general missing data patterns in the presence of high-dimensional data,” Scientific reports, vol. 6, iss. 21689, 2016."
+      "dc:bibliographicCitation": "Y. Deng, C. Chang, M. S. Ido, and Q. Long, “Multiple imputation for general missing data patterns in the presence of high-dimensional data,” Scientific reports, vol. 6, iss. 21689, 2016."
+    },
+    {
+      "@id": "https://doi.org/10.25302/10.2019.ME.13035.840",
+      "dc:bibliographicCitation": "Q. Long, B. A. Johnson, Y. Zhao, Y. Deng, and C. Chang,“Statistical Methods for Missing Data in Large Observational Studies,” Washington D.C., Patient Centered Outcomes Research Institute (PCORI), 2019."
     }
   ],
   "dc:description": "Computable Knowledge for multiple imputation for high-dimensional incomplete data",
-  "schema:creator": {
-    "@id": "Long Research Group",
-    "@type": "schema:Organization",
-    "schema:Name": "Long Research Group",
-    "schema:affiliation": "Perelman School of Medicine, University of Pennsylvania"
-  },
+  "schema:creator": [
+    {
+      "@id": "Long Research Group",
+      "@type": "schema:Organization",
+      "schema:name": "Long Research Group",
+      "schema:affiliation": "Perelman School of Medicine, University of Pennsylvania"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0660-5230",
+      "@type": "schema:Person",
+      "schema:name": "Dr. Qi Long",
+      "schema:affiliation": "Perelman School of Medicine, University of Pennsylvania",
+      "schema:roleName": "Principal Investigator",
+      "schema:email": "qlong@pennmedicine.upenn.edu"
+    }
+  ],
   "koio:hasKnowledge": [
     {
       "@id": "GMdurr",
@@ -153,14 +168,6 @@
       "hasInterface": "R/GMiurr.R",
       "dependsOn": [
         "GMiurr"
-      ],
-      "implementedBy": [
-        {
-          "@id": "NAMESPACE",
-          "@type": [
-            "Implementation"
-          ]
-        }
       ]
     },
     {
@@ -173,14 +180,6 @@
       "hasInterface": "R/0927MIiurr.R",
       "dependsOn": [
         "0927MIiurr"
-      ],
-      "implementedBy": [
-        {
-          "@id": "NAMESPACE",
-          "@type": [
-            "Implementation"
-          ]
-        }
       ]
     },
     {
@@ -193,13 +192,49 @@
       "hasInterface": "R/0927MIdurr.R",
       "dependsOn": [
         "0927MIdurr"
-      ],
-      "implementedBy": [
+      ]
+    }
+  ],
+  "koio:hasTest": [
+    {
+      "@id": "Vignette Operational Test",
+      "@type": "koio:Test",
+      "dc:title": "Vignette Operational Test",
+      "dc:description": "A test to confirm knowledge and services work",
+      "implementedBy": {
+        "@id": "MIHD.Rnw",
+        "@type": [
+          "Script",
+          "Functions",
+          "R code",
+          "Functions Script",
+          "Function description"
+        ]
+      },
+      "koio:hasDocumentation": [
         {
-          "@id": "NAMESPACE",
-          "@type": [
-            "Implementation"
-          ]
+          "@id": "data/GMdata.RData",
+          "@type": "schema:Dataset",
+          "dc:title": "GMdata.RData",
+          "dc:description": "File for imputation with data"
+        },
+        {
+          "@id": "data/datapoisson.RData",
+          "@type": "schema:Dataset",
+          "dc:title": "datapoisson.RData",
+          "dc:description": "File for imputation with data conforming to poisson distribution"
+        },
+        {
+          "@id": "data/databinary.RData",
+          "@type": "schema:Dataset",
+          "dc:title": "databinary.RData",
+          "dc:description": "File for imputation with data conforming to binary distribution"
+        },
+        {
+          "@id": "data/datagaussian.RData",
+          "@type": "schema:Dataset",
+          "dc:title": "datagaussian.RData",
+          "dc:description": "File for imputation with data conforming to gaussian distribution"
         }
       ]
     }
