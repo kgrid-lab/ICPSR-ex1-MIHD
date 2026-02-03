@@ -4,7 +4,7 @@
   "versionInfo": "2.1",
   "@type": "KnowledgeObject",
   "dc:title": "Multiple Imputation in the Presence of High-dimensional Data",
-  "dc:identifier": ["placeholder#SOME_OTHER_ID","https://github.com/kgrid-lab/ICPSR-ex1-MIHD"]
+  "dc:identifier": ["placeholder#SOME_OTHER_ID","https://github.com/kgrid-lab/ICPSR-ex1-MIHD"],
   "dc:version": "3.0",
   "dc:date": "2015-09-22",
   "schema:funder": "Patient-Centered Outcomes Research Institute (PCORI) ME-1303-5840",
