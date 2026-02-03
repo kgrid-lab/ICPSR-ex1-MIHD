@@ -257,6 +257,15 @@
       ],
       "dc:title": "Multiple Imputation Algorithms for Univariate Missing Data in the Presence of High-dimensional Data",
       "dc:description": "Treatise on how IURR and DURR algorithms when imputing data for only one variable"
+    },
+    {
+      "@id": "",
+      "@type": [
+        "Educational Example",
+        "Jupyter Notebook"
+      ],
+      "dc:title": "Interactive Notebook for MIHD",
+      "dc:description": "A Jupyter Notebook for viewing how to compute with the MIdurr function"
     }
   ]
 }
