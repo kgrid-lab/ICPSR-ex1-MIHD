@@ -29,7 +29,7 @@
   "dc:description": "Computable Knowledge for multiple imputation for high-dimensional incomplete data",
   "schema:creator": [
     {
-      "@id": "Long Research Group",
+      "@id": "https://www.med.upenn.edu/long-lab/",
       "@type": "schema:Organization",
       "schema:name": "Long Research Group",
       "schema:affiliation": "Perelman School of Medicine, University of Pennsylvania"
